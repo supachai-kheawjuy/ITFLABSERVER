@@ -16,8 +16,8 @@
   }
   $res = mysqli_query($conn, 'SELECT * FROM guestbook');
   ?>
-  <table class="table">
-    <thead class="table table-dark">
+  <table class="table table-hover" width="600" border="1">
+    <thead class="thead-dark">
       <tr>
         <th width="100">
           <div align="center">Name</div>
@@ -30,7 +30,7 @@
         </th>
       </tr>
     </thead>
-    <tbody class="table table-hover" width="600" border="1">
+    <tbody>
 
     </tbody>
     <?php
