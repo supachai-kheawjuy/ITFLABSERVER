@@ -53,7 +53,7 @@
         while ($Result = mysqli_fetch_array($res)) {
         ?>
           <tr id="row<?php echo $Result['ID']; ?>">
-            <td class="align-middle" width="150">
+            <td class="align-middle" width="100">
               <?php echo $Result['Name']; ?>
             </td>
             <td class="align-middle" width="350">
