@@ -15,7 +15,7 @@
 </script>
 
 <body>
-  <div class="card">
+  <div class="card-body">
     <?php
     $conn = mysqli_init();
     mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Boss0899046417', 'ITFlab', 3306);
@@ -45,7 +45,7 @@
         <?php
         while ($Result = mysqli_fetch_array($res)) {
         ?>
-          <tr id="('row')<?php echo $Result['ID']; ?>">
+          <tr id="row<?php echo $Result['ID']; ?>">
             <td class="align-middle">
               <?php echo $Result['Name']; ?>
             </td>
