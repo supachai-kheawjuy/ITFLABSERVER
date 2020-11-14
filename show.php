@@ -9,7 +9,8 @@
 
 <script>
   function Delete(id) {
-    document.getElementById(id).remove();
+    console.log(id)
+    document.getElementById('row' + id).remove();
   }
 </script>
 
@@ -44,19 +45,19 @@
         <?php
         while ($Result = mysqli_fetch_array($res)) {
         ?>
-          <tr id="<?php echo $Result['ID']; ?>">
-            <td>
+          <tr id="'row' + <?php echo $Result['ID']; ?>">
+            <td class="align-middle">
               <?php echo $Result['Name']; ?>
             </td>
-            <td>
+            <td class="align-middle">
               <?php echo $Result['Comment']; ?>
             </td>
-            <td>
+            <td class="align-middle">
               <?php echo $Result['Link']; ?>
             </td>
             <td>
               <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger" onclick="Delete(tr.id)">Delete</button>
+              <button type="button" class="btn btn-danger" onclick="Delete(<?php echo $Result['ID']; ?>)">Delete</button>
             </td>
           </tr>
         <?php
@@ -66,9 +67,6 @@
     </table>
     <?php mysqli_close($conn); ?>
     <button type="button" class="btn btn-success">Add Row</button>
-  </div>
-  <div class="card mt-3">
-    <p>HELLO WORLD</p>
   </div>
 </body>
 
