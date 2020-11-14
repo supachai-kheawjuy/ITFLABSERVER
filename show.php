@@ -7,8 +7,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <style>
     .card {
+      margin-top: 2rem;
+      margin-left: 4rem;
+      margin-right: 4rem;
       border-radius: 20px;
-      padding: 2rem 10rem 2rem;
+      padding: 2rem 5rem 2rem;
       box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
     }
   </style>
@@ -23,6 +26,13 @@
 
 <body>
   <div class="card">
+    <nav class="navbar navbar-light justify-content-between">
+      <a class="navbar-brand">ITF Lab</a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
     <?php
     $conn = mysqli_init();
     mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Boss0899046417', 'ITFlab', 3306);
@@ -73,7 +83,9 @@
       </tbody>
     </table>
     <?php mysqli_close($conn); ?>
-    <button type="button" class="btn btn-success">Add Row</button>
+    <div>
+      <button type="button" class="btn btn-success">Add Row</button>
+    </div>
   </div>
 </body>
 
