@@ -15,7 +15,7 @@
 </script>
 
 <body>
-  <div class="card-body">
+  <div class="card">
     <?php
     $conn = mysqli_init();
     mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Boss0899046417', 'ITFlab', 3306);
