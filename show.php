@@ -28,6 +28,9 @@
         <th width="150">
           <div align="center">Link </div>
         </th>
+        <th width="150">
+          <div align="center">Action</div>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -46,12 +49,17 @@
         <td>
           <?php echo $Result['Link']; ?>
         </td>
+        <td>
+          <button type="button" class="btn btn-primary">Edit</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </td>
       </tr>
     <?php
     }
     ?>
   </table>
   <?php mysqli_close($conn); ?>
+  <button type="button" class="btn btn-success">Add Row</button>
 </body>
 
 </html>
