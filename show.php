@@ -44,7 +44,7 @@
         <?php
         while ($Result = mysqli_fetch_array($res)) {
         ?>
-          <tr id="# + <?php echo $Result['ID']; ?>">
+          <tr id="<?php echo $Result['ID']; ?>">
             <td>
               <?php echo $Result['Name']; ?>
             </td>
@@ -56,7 +56,7 @@
             </td>
             <td>
               <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger" onclick="Delete()">Delete</button>
+              <button type="button" class="btn btn-danger" onclick="Delete(tr.id)">Delete</button>
             </td>
           </tr>
         <?php
