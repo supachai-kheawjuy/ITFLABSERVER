@@ -31,7 +31,7 @@
     }
     $res = mysqli_query($conn, 'SELECT * FROM guestbook');
     ?>
-    <table class="table table-hover" width="600" border="1">
+    <table class="table table-hover" width="700" border="1">
       <thead class="thead-dark">
         <tr>
           <th width="100">
@@ -43,7 +43,7 @@
           <th width="150">
             <div align="center">Link </div>
           </th>
-          <th width="150">
+          <th width="100">
             <div align="center">Action</div>
           </th>
         </tr>
@@ -53,16 +53,16 @@
         while ($Result = mysqli_fetch_array($res)) {
         ?>
           <tr id="row<?php echo $Result['ID']; ?>">
-            <td class="align-middle">
+            <td class="align-middle" width="150">
               <?php echo $Result['Name']; ?>
             </td>
-            <td class="align-middle">
+            <td class="align-middle" width="350">
               <?php echo $Result['Comment']; ?>
             </td>
-            <td class="align-middle">
+            <td class="align-middle" width="150">
               <?php echo $Result['Link']; ?>
             </td>
-            <td>
+            <td class="align-middle" width="100">
               <button type="button" class="btn btn-primary">Edit</button>
               <button type="button" class="btn btn-danger" onclick="Delete(<?php echo $Result['ID']; ?>)">Delete</button>
             </td>
