@@ -9,7 +9,7 @@
 
 <script>
   function Delete(id) {
-    console.log(id)
+    console.log('row' + id)
     document.getElementById('row' + id).remove();
   }
 </script>
@@ -45,7 +45,7 @@
         <?php
         while ($Result = mysqli_fetch_array($res)) {
         ?>
-          <tr id="'row' + <?php echo $Result['ID']; ?>">
+          <tr id="(" row") + (<?php echo $Result['ID']; ?>)">
             <td class="align-middle">
               <?php echo $Result['Name']; ?>
             </td>
