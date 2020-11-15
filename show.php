@@ -18,8 +18,11 @@
 </head>
 
 <script>
+  function Refresh() {
+    document.getElementById("data").Refresh();
+  }
+
   function Delete(id) {
-    console.log('row' + id)
     document.getElementById('row' + id).remove();
   }
 </script>
@@ -41,7 +44,33 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger">Delete</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="Delete()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="addrow" tabindex="-1" role="dialog" aria-labelledby="addrowLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addrowLabel" onclick="Delete()">Delete</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="insert.php" method="post" id="CommentForm">
+            Name:<br>
+            <input type="text" name="name" id="idName"> <br>
+            Comment:<br>
+            <textarea rows="10" cols="20" name="comment" id="idComment"></textarea><br>
+            Link:<br>
+            <input type="text" name="link" id="idLink"> <br><br>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" id="commentBtn" data-dismiss="modal" onclick="">Create</button>
         </div>
       </div>
     </div>
@@ -62,7 +91,7 @@
     }
     $res = mysqli_query($conn, 'SELECT * FROM guestbook');
     ?>
-    <table class="table table-hover mb-3" width="680" border="1">
+    <table class="table table-hover mb-3" width="680" border="1" id="data">
       <thead class="thead-dark">
         <tr>
           <th width="100">
@@ -106,7 +135,7 @@
     </table>
     <?php mysqli_close($conn); ?>
     <div>
-      <button type="button" class="btn btn-success">Add</button>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addrow">Create new</button>
     </div>
   </div>
 </body>
