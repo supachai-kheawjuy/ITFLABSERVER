@@ -41,7 +41,7 @@
     }
     $res = mysqli_query($conn, 'SELECT * FROM guestbook');
     ?>
-    <table class="table table-hover" width="700" border="1">
+    <table class="table table-hover" width="680" border="1">
       <thead class="thead-dark">
         <tr>
           <th width="100">
@@ -53,7 +53,7 @@
           <th width="150">
             <div align="center">Link </div>
           </th>
-          <th width="100">
+          <th width="80">
             <div align="center">Action</div>
           </th>
         </tr>
@@ -72,7 +72,7 @@
             <td class="align-middle" width="150">
               <?php echo $Result['Link']; ?>
             </td>
-            <td class="align-middle" width="100">
+            <td class="align-middle justify-content-between" width="80">
               <button type="button" class="btn btn-primary">Edit</button>
               <button type="button" class="btn btn-danger" onclick="Delete(<?php echo $Result['ID']; ?>)">Delete</button>
             </td>
