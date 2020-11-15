@@ -25,9 +25,28 @@
 </script>
 
 <body>
+  <div class="modal fade" id="deleteaccept" tabindex="-1" role="dialog" aria-labelledby="deleteacceptLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteacceptLabel">Delete</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>ต้องการที่จะลบแถวหรือไม่?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="card">
     <nav class="navbar navbar-light justify-content-between">
-      <a class="navbar-brand">ITF Lab</a>
+      <a class="navbar-brand">ITFLab: Database</a>
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -72,9 +91,10 @@
             <td class="align-middle" width="150">
               <?php echo $Result['Link']; ?>
             </td>
-            <td class="align-middle justify-content-between" width="80">
+            <td class="align-middle" width="80">
               <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger" onclick="Delete(<?php echo $Result['ID']; ?>)">Delete</button>
+              <!-- onclick="Delete(<?php echo $Result['ID']; ?>)"-->
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button>
             </td>
           </tr>
         <?php
@@ -84,7 +104,7 @@
     </table>
     <?php mysqli_close($conn); ?>
     <div>
-      <button type="button" class="btn btn-success">Add Row</button>
+      <button type="button" class="btn btn-success">Add</button>
     </div>
   </div>
 </body>
