@@ -26,16 +26,18 @@
 
 <body>
   <div class="modal fade" id="deleteaccept" tabindex="-1" role="dialog" aria-labelledby="deleteacceptLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="deleteacceptLabel">Delete</h5>
+          <h5 class="modal-title" id="deleteacceptLabel" onclick="Delete()">Delete</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <p>ต้องการที่จะลบแถวหรือไม่?</p>
+          <center>
+            <p align="center">Delete this row?</p>
+          </center>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -60,7 +62,7 @@
     }
     $res = mysqli_query($conn, 'SELECT * FROM guestbook');
     ?>
-    <table class="table table-hover" width="680" border="1">
+    <table class="table table-hover mb-3" width="680" border="1">
       <thead class="thead-dark">
         <tr>
           <th width="100">
@@ -94,7 +96,7 @@
             <td class="align-middle" width="80">
               <button type="button" class="btn btn-primary">Edit</button>
               <!-- onclick="Delete(<?php echo $Result['ID']; ?>)"-->
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button>
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteaccept">Delete</button>
             </td>
           </tr>
         <?php
