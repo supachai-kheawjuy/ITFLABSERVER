@@ -60,28 +60,15 @@
         </div>
         <div class="modal-body">
           <form action="insert.php" method="post" id="CommentForm">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
-              </div>
-              <input type="text" name="name" id="idName" class="form-control">
-            </div>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Comment</span>
-              </div>
-              <input type="text" name="comment" id="idComment" class="form-control">
-            </div>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Link</span>
-              </div>
-              <input type="text" name="link" id="idLink" class="form-control">
-            </div>
+            <label>Name</label>
+            <input type="text" name="name" id="idName" class="form-control mb-1" placeholder="Enter name">
+            <label>Comment</label>
+            <input type="text" name="comment" id="idComment" class="form-control mb-1" placeholder="Enter comment">
+            <label>Link</label>
+            <input type="text" name="link" id="idLink" class="form-control mb-1" placeholder="Enter link">
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="submit" form="CommentForm" class="btn btn-success" id="commentBtn" data-dismiss="modal">Comment</button>
         </div>
       </div>
