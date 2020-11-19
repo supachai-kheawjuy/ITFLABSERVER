@@ -53,7 +53,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="addrowLabel">Create a new row</h5>
+          <h5 class="modal-title" id="addrowLabel">Comment</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -82,7 +82,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-success" id="commentBtn" data-dismiss="modal">Create</button>
+          <input type="submit" form="CommentForm" value="Create" class="btn btn-success" id="commentBtn" data-dismiss="modal"></input>
         </div>
       </div>
     </div>
@@ -147,7 +147,7 @@
     </table>
     <?php mysqli_close($conn); ?>
     <div>
-      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addrow">Create new</button>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addrow">Comment</button>
     </div>
   </div>
 </body>
