@@ -59,7 +59,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="insert.php" method="post" id="CommentForm">
+          <form action="./insert.php" method="post" id="CommentForm">
             <label>Name</label>
             <input type="text" name="name" id="idName" class="form-control mb-1" placeholder="Enter name">
             <label>Comment</label>
