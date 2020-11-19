@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>ITFLab</title>
+  <title>ITFLab: Database</title>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -53,24 +53,36 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="addrowLabel" onclick="Delete()">Delete</h5>
+          <h5 class="modal-title" id="addrowLabel">Create a new row</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <form action="insert.php" method="post" id="CommentForm">
-            Name:<br>
-            <input type="text" name="name" id="idName"> <br>
-            Comment:<br>
-            <textarea rows="10" cols="20" name="comment" id="idComment"></textarea><br>
-            Link:<br>
-            <input type="text" name="link" id="idLink"> <br><br>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+              </div>
+              <input type="text" name="name" id="idName" class="form-control">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Comment</span>
+              </div>
+              <input type="text" name="comment" id="idComment" class="form-control">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Link</span>
+              </div>
+              <input type="text" name="link" id="idLink" class="form-control">
+            </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success" id="commentBtn" data-dismiss="modal" onclick="">Create</button>
+          <button type="submit" class="btn btn-success" id="commentBtn" data-dismiss="modal" onclick="">Create</button>
         </div>
       </div>
     </div>
@@ -78,14 +90,15 @@
   <div class="card">
     <nav class="navbar navbar-light justify-content-between">
       <a class="navbar-brand">ITFLab: Database</a>
+      <!--
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      </form>-->
     </nav>
     <?php
     $conn = mysqli_init();
-    mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Boss0899046417', 'ITFlab', 3306);
+    mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Databaseeiei123', 'ITFlab', 3306);
     if (mysqli_connect_errno($conn)) {
       die('Failed to connect to MySQL: ' . mysqli_connect_error());
     }
@@ -124,8 +137,7 @@
             </td>
             <td class="align-middle" width="80">
               <button type="button" class="btn btn-primary">Edit</button>
-              <!-- onclick="Delete(<?php echo $Result['ID']; ?>)"-->
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteaccept">Delete</button>
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteaccept" id="<?php echo $Result['ID']; ?>">Delete</button>
             </td>
           </tr>
         <?php
