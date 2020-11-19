@@ -76,7 +76,7 @@
   </div>
   <div class="card">
     <nav class="navbar navbar-light justify-content-between">
-      <a class="navbar-brand">ITFLab: Database</a>
+      <h3>ITFLab: Database</h3>
       <!--
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
