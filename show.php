@@ -82,7 +82,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <input type="submit" form="CommentForm" value="Create" class="btn btn-success" id="commentBtn" data-dismiss="modal"></input>
+          <button type="submit" form="CommentForm" class="btn btn-success" id="commentBtn" data-dismiss="modal">Comment</button>
         </div>
       </div>
     </div>
