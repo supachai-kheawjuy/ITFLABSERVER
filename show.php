@@ -43,9 +43,12 @@
           <center>
             <p align="center">Delete this row?</p>
           </center>
+          <form action="delete.php" method="post" id="DeleteForm">
+            <input type="hidden" name="ID" value="0">
+          </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="Delete()">Delete</button>
+          <button type="button" class="btn btn-danger" data-modal-action="yes" onclick="Delete()">Delete</button>
         </div>
       </div>
     </div>
@@ -76,13 +79,11 @@
                 <span class="input-group-text" id="basic-addon1">.com</span>
               </div>-->
             </div>
-            <input type="submit" value="Comment" class="btn btn-success mt-2" data-modal-action="yes"></input>
           </form>
         </div>
-        <!--
         <div class="modal-footer">
-          <button type="submit" form="CommentForm" class="btn btn-success" id="commentBtn" data-dismiss="modal">Comment</button>
-        </div>-->
+          <button type="submit" form="CommentForm" class="btn btn-success" id="commentBtn" data-modal-action="yes">Comment</button>
+        </div>
       </div>
     </div>
   </div>
@@ -110,13 +111,16 @@
             <div align="center">Name</div>
           </th>
           <th width="350">
-            <div align="center">Comment </div>
+            <div align="center">Comment</div>
           </th>
           <th width="150">
             <div align="center">Link </div>
           </th>
-          <th width="80">
-            <div align="center">Action</div>
+          <th width="40">
+            <div align="center">Edit</div>
+          </th>
+          <th width="40">
+            <div align="center">Delete</div>
           </th>
         </tr>
       </thead>
@@ -134,9 +138,11 @@
             <td class="align-middle" width="150">
               <?php echo $Result['Link']; ?>
             </td>
-            <td class="align-middle" width="80">
-              <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteaccept" id="<?php echo $Result['ID']; ?>">Delete</button>
+            <td class="align-middle" width="40">
+              <button type="button" class="btn btn-primary btn-block">Edit</button>
+            </td>
+            <td class="align-middle" width="40">
+              <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteaccept" value="<?php echo $Result['ID']; ?>" id="<?php echo $Result['ID']; ?>">Delete</button>
             </td>
           </tr>
         <?php
