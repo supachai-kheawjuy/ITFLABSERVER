@@ -15,14 +15,6 @@
       box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
     }
   </style>
-  <?php
-    $conn = mysqli_init();
-    mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Databaseeiei123', 'ITFlab', 3306);
-    if (mysqli_connect_errno($conn)) {
-      die('Failed to connect to MySQL: ' . mysqli_connect_error());
-    }
-    $res = mysqli_query($conn, 'SELECT * FROM guestbook');
-    ?>
 </head>
 
 <script>
@@ -75,7 +67,7 @@
             <input type="text" name="comment" id="idComment" class="form-control mb-2" placeholder="Enter comment">
             <label>Link</label>
             <input type="text" name="link" id="idLink" class="form-control mb-2" placeholder="Enter link">
-            <input type="submit" value="Comment" class="btn btn-success mt-2" data-dismiss="modal"></input>
+            <input type="submit" value="Comment" class="btn btn-success mt-2" data-modal-action="yes"></input>
           </form>
         </div>
         <!--
@@ -94,6 +86,14 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>-->
     </nav>
+    <?php
+    $conn = mysqli_init();
+    mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Databaseeiei123', 'ITFlab', 3306);
+    if (mysqli_connect_errno($conn)) {
+      die('Failed to connect to MySQL: ' . mysqli_connect_error());
+    }
+    $res = mysqli_query($conn, 'SELECT * FROM guestbook');
+    ?>
     <table class="table table-hover mb-3" width="680" border="1" id="data">
       <thead class="thead-dark">
         <tr>
