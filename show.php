@@ -22,12 +22,12 @@
     $('#addrow').on('hidden.bs.modal', function() {
       $(this).find('form').trigger('reset');
     })
-  })
 
-  $(".openmodaleiei").click(function() {
-    $('#ID').val($(this).data('id'));
-    $('#deleteaccept').modal('show');
-  });
+    $(".openmodaleiei").click(function() {
+      $('#ID').val($(this).data('id'));
+      $('#deleteaccept').modal('show');
+    });
+  })
 </script>
 
 <body>
