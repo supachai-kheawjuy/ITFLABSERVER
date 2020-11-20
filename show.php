@@ -113,26 +113,26 @@
 
           $query = mysqli_query($conn, $sql);
 
-          if (!$query) {
-            echo "not work";
-          } else {
-            $data = mysqli_fetch_assoc($query);
-          } ?>
-          <form action="update.php" method="post" id="EditForm">
-            <!--<input type="hidden" name="iddd" id="valIdd" value="">-->
-            <?php
-            while ($Result = mysqli_fetch_array($data)) {
-            ?>
-              <label>Name</label>
-              <input type="text" value="<?php echo $data['Name']; ?>" name="name" id="idName" class="form-control mb-2" placeholder="Enter name">
-              <label>Comment</label>
-              <input type="text" value="<?php echo $data['Comment']; ?>" name="comment" id="idComment" class="form-control mb-2" placeholder="Enter comment">
-              <label>Link</label>
-              <input type="text" value="<?php echo $data['Link']; ?>" name="link" id="idLink" class="form-control" placeholder="Enter link">
-          </form>
-        <?php
-            }
-        ?>
+          if (!$query) { ?>
+            console.log("bruh")<?php
+                              } else {
+                                $data = mysqli_fetch_assoc($query);
+                              } ?>
+            <form action="update.php" method="post" id="EditForm">
+              <!--<input type="hidden" name="iddd" id="valIdd" value="">-->
+              <?php
+              while ($Result = mysqli_fetch_array($data)) {
+              ?>
+                <label>Name</label>
+                <input type="text" value="<?php echo $data['Name']; ?>" name="name" id="idName" class="form-control mb-2" placeholder="Enter name">
+                <label>Comment</label>
+                <input type="text" value="<?php echo $data['Comment']; ?>" name="comment" id="idComment" class="form-control mb-2" placeholder="Enter comment">
+                <label>Link</label>
+                <input type="text" value="<?php echo $data['Link']; ?>" name="link" id="idLink" class="form-control" placeholder="Enter link">
+            </form>
+          <?php
+              }
+          ?>
         </div>
         <div class="modal-footer">
           <button type="submit" form="EditForm" class="btn btn-success" id="editBtn" data-modal-action="yes">Save</button>
