@@ -111,7 +111,7 @@
               die('Failed to connect to MySQL: ' . mysqli_connect_error());
             }
 
-            $sql = "SELECT * FROM guestbook WHERE ID = $_POST('iddd')";
+            $sql = "SELECT * FROM guestbook WHERE ID = $('#valIddd')";
 
             $query = mysqli_query($conn, $sql);
 
