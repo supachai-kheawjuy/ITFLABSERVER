@@ -103,27 +103,23 @@
         </div>
         <div class="modal-body">
           <?php
-          $conn = mysqli_init();
-          mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Databaseeiei123', 'ITFlab', 3306);
-          if (mysqli_connect_errno($conn)) {
-            die('Failed to connect to MySQL: ' . mysqli_connect_error());
-          }
+          if (isset($_POST['iddd'])) {
+            $sql = "SELECT * FROM guestbook WHERE ID = $(this)";
 
-          $sql = "SELECT * FROM guestbook WHERE ID = $_POST('iddd')";
+            $query = mysqli_query($conn, $sql);
 
-          $query = mysqli_query($conn, $sql);
-
-          if (!$query) { ?>
-            <script>
-              console.log("bruh")
-            </script><?php
-                    } else {
-                      $data = mysqli_fetch_assoc($query);
+            if (!$query) { ?>
+              <script>
+                console.log("bruh")
+              </script><?php
+                      } else {
+                        $dataeiei = mysqli_fetch_assoc($query);
+                      }
                     } ?>
+
           <form action="update.php" method="post" id="EditForm">
-            <!--<input type="hidden" name="iddd" id="valIdd" value="">-->
             <?php
-            while ($Result = mysqli_fetch_array($data)) {
+            while ($Result = mysqli_fetch_array($dataeiei)) {
             ?>
               <label>Name</label>
               <input type="text" value="<?php echo $data['Name']; ?>" name="name" id="idName" class="form-control mb-2" placeholder="Enter name">
