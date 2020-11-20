@@ -6,12 +6,15 @@ if (mysqli_connect_errno($conn)) {
     die('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-$ID = $_POST['ID'];
+$id = $_POST['ID'];
+$name = $_POST['name'];
+$comment = $_POST['comment'];
+$link = $_POST['link'];
 
-$sql = "DELETE FROM guestbook WHERE ID = '$ID'";
+$sql = "UPDATE guestbook SET Name='$name', Comment='$comment', Link='$link' WHERE ID = $ID";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Record deleted successfully"; ?>
+    echo "Record updated successfully"; ?>
     <script>
         window.location.replace("show.php");
     </script><?php
