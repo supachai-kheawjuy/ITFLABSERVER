@@ -104,18 +104,22 @@
         <div class="modal-body">
           <?php
           if (isset($_POST['iddd'])) {
-            $sql = "SELECT * FROM guestbook WHERE ID = $(this)";
+            $conn = mysqli_init();
+            mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Databaseeiei123', 'ITFlab', 3306);
+            if (mysqli_connect_errno($conn)) {
+              die('Failed to connect to MySQL: ' . mysqli_connect_error());
+            }
+
+            $sql = "SELECT * FROM guestbook WHERE ID = $[this]";
 
             $query = mysqli_query($conn, $sql);
 
-            if (!$query) { ?>
-              <script>
-                console.log("bruh")
-              </script><?php
-                      } else {
-                        $dataeiei = mysqli_fetch_assoc($query);
-                      }
-                    } ?>
+            if (!$query) {
+              echo ("adasd");
+            } else {
+              $dataeiei = mysqli_fetch_assoc($query);
+            }
+          } ?>
 
           <form action="update.php" method="post" id="EditForm">
             <?php
