@@ -71,9 +71,10 @@
                 <span class="input-group-text" id="basic-addon1">www.</span>
               </div>
               <input type="text" name="link" id="idLink" class="form-control" placeholder="Enter link">
+              <!--
               <div class="input-group-append">
                 <span class="input-group-text" id="basic-addon1">.com</span>
-              </div>
+              </div>-->
             </div>
             <input type="submit" value="Comment" class="btn btn-success mt-2" data-modal-action="yes"></input>
           </form>
