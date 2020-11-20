@@ -62,11 +62,13 @@
             <input type="text" name="comment" id="idComment" class="form-control mb-1" placeholder="Enter comment">
             <label>Link</label>
             <input type="text" name="link" id="idLink" class="form-control mb-1" placeholder="Enter link">
+            <input type="submit" value="Comment" class="btn btn-success mt-2" data-dismiss="modal"></input>
           </form>
         </div>
+        <!--
         <div class="modal-footer">
           <button type="submit" form="CommentForm" class="btn btn-success" id="commentBtn" data-dismiss="modal">Comment</button>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>
