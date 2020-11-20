@@ -104,7 +104,7 @@
         </div>
         <div class="modal-body">
           <form action="update.php" method="post" id="EditForm">
-            <input type="hidden" name="id" id="varId" value="<?php echo $data['ID']; ?>">
+            <input type="hidden" name="id" id="varId" value="">
             <label>Name</label>
             <input type="text" value="<?php echo $data['Name']; ?>" name="name" id="idName" class="form-control mb-2" placeholder="Enter name">
             <label>Comment</label>
