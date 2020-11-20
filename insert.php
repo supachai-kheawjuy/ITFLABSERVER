@@ -6,7 +6,6 @@ if (mysqli_connect_errno($conn)) {
   die('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-
 $name = $_POST['name'];
 $comment = $_POST['comment'];
 $link = $_POST['link'];
