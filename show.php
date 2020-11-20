@@ -68,11 +68,11 @@
             <label>Link</label>
             <div class="input-group mb-2">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3">www.</span>
+                <span class="input-group-text" id="basic-addon1">www.</span>
               </div>
-              <input type="text" name="link" id="idLink" class="form-control mb-2" placeholder="Enter link">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3">.com</span>
+              <input type="text" name="link" id="idLink" class="form-control" placeholder="Enter link">
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon1">.com</span>
               </div>
             </div>
             <input type="submit" value="Comment" class="btn btn-success mt-2" data-modal-action="yes"></input>
