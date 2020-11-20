@@ -145,7 +145,7 @@
               <button type="button" class="btn btn-primary btn-block">Edit</button>
             </td>
             <td class="align-middle" width="40">
-              <button type="button" class="btn btn-danger btn-block openmodaleiei" data-toggle="modal" data-target="#deleteaccept" value="<?php echo $Result['ID']; ?>" id="<?php echo $Result['ID']; ?>">Delete</button>
+              <button type="button" class="btn btn-danger btn-block openmodaleiei" data-toggle="modal" data-target="#deleteaccept" data-value="<?php echo $Result['ID']; ?>" id="<?php echo $Result['ID']; ?>">Delete</button>
             </td>
           </tr>
         <?php
