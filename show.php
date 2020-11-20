@@ -132,7 +132,7 @@
             </form>
           <?php
               }
-          ?>
+              mysqli_close($conn); ?>
         </div>
         <div class="modal-footer">
           <button type="submit" form="EditForm" class="btn btn-success" id="editBtn" data-modal-action="yes">Save</button>
