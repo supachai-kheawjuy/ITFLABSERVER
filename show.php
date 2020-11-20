@@ -104,6 +104,11 @@
         <div class="modal-body">
           <?php
           if (isset($_POST['iddd'])) {
+          ?>
+            <script>
+              console.log("hello")
+            </script>
+          <?php
             $conn = mysqli_init();
             mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Databaseeiei123', 'ITFlab', 3306);
             if (mysqli_connect_errno($conn)) {
@@ -114,14 +119,8 @@
 
             $query = mysqli_query($conn, $sql);
 
-            if (!$query) {
-              echo ("adasd");
-            } else {
-              $dataeiei = mysqli_fetch_assoc($query);
-            }
-          } ?>
-
-          <form action="update.php" method="post" id="EditForm">
+            $dataeiei = mysqli_fetch_assoc($query);
+          } ?> <form action="update.php" method="post" id="EditForm">
             <?php
             while ($Result = mysqli_fetch_array($dataeiei)) {
             ?>
