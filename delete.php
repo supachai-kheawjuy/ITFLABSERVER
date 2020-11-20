@@ -11,7 +11,7 @@ $ID = $_POST['ID'];
 $sql = "DELETE FROM guestbook WHERE ID = $ID";
 
 if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully"; ?>
+    echo "Record deleted successfully"; ?>
     <script>
         window.location.replace("show.php");
     </script><?php

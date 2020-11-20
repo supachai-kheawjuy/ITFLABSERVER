@@ -24,14 +24,14 @@
     })
 
     $(".openmodaleiei").click(function() {
-      $('#valID').value($(this).data('id'));
+      $('#valID').val($(this).data('id'));
       $('#deleteaccept').modal('show');
     });
   })
 </script>
 
 <body>
-  <div class="modal fade openmodaleiei" id="deleteaccept" tabindex="-1" role="dialog" aria-labelledby="deleteacceptLabel" aria-hidden="true">
+  <div class="modal fade" id="deleteaccept" tabindex="-1" role="dialog" aria-labelledby="deleteacceptLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -45,7 +45,7 @@
             <p align="center">Delete this row?</p>
           </center>
           <form action="delete.php" method="post" id="DeleteForm">
-            <input type="hidden" name="ID" id="valID" value="1">
+            <input type="hidden" name="ID" id="valID" value="">
           </form>
         </div>
         <div class="modal-footer">
@@ -143,7 +143,7 @@
               <button type="button" class="btn btn-primary btn-block">Edit</button>
             </td>
             <td class="align-middle" width="40">
-              <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteaccept" value="<?php echo $Result['ID']; ?>" id="<?php echo $Result['ID']; ?>">Delete</button>
+              <button type="button" class="btn btn-danger btn-block openmodaleiei" data-toggle="modal" data-target="#deleteaccept" value="<?php echo $Result['ID']; ?>" id="<?php echo $Result['ID']; ?>">Delete</button>
             </td>
           </tr>
         <?php
