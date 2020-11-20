@@ -29,7 +29,7 @@
     });
 
     $(".editeiei").click(function() {
-      $('#valId').val($(this).data('value'));
+      $('#valIdd').val($(this).data('value'));
       $('#editdata').modal('show');
     });
   })
@@ -104,7 +104,7 @@
         </div>
         <div class="modal-body">
           <form action="update.php" method="post" id="EditForm">
-            <input type="hidden" name="id" id="varId" value="">
+            <input type="hidden" name="id" id="valIdd" value="">
             <label>Name</label>
             <input type="text" value="<?php echo $data['Name']; ?>" name="name" id="idName" class="form-control mb-2" placeholder="Enter name">
             <label>Comment</label>
