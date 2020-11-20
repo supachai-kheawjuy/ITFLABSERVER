@@ -22,7 +22,9 @@
     $('#addrow').on('hidden.bs.modal', function() {
       $(this).find('form').trigger('reset');
     })
+  })
 
+  $(document).ready(function() {
     $(".openmodaleiei").click(function() {
       $('#valID').val($(this).data('id'));
       $('#deleteaccept').modal('show');
