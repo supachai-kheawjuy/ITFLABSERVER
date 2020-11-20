@@ -19,30 +19,18 @@
 
 <script>
   $(document).ready(function() {
-    $('#addrow').on('hidden.bs.modal', function() {
-      $(this).find('form').trigger('reset');
-    })
+        $('#addrow').on('hidden.bs.modal', function() {
+          $(this).find('form').trigger('reset');
+        })
 
-    $('#editdata').on('hidden.bs.modal', function() {
-      $(this).find('form').trigger('reset');
-    })
+        $('#editdata').on('hidden.bs.modal', function() {
+          $(this).find('form').trigger('reset');
+        })
 
-    $(".deleteeiei").click(function() {
-      $('#valID').val($(this).data('value'));
-      $('#deleteaccept').modal('show');
-    });
-
-    $(".editeiei").click(function() {
-      $('#valIdd').val($(this).data('value'));
-      $('#editdata').modal('show');
-      $.ajax({
-        type: "POST",
-        url: 'show.php',
-        data: $(this).data('value'),
-        success: $id = data
-      })
-    });
-  })
+        $(".deleteeiei").click(function() {
+          $('#valID').val($(this).data('value'));
+          $('#deleteaccept').modal('show');
+        });
 </script>
 
 <body>
