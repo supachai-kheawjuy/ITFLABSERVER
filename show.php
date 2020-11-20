@@ -105,17 +105,6 @@
         <div class="modal-body">
           <form action="update.php" method="post" id="EditForm">
             <input type="hidden" name="id" id="varId" value="<?php echo $data['ID']; ?>">
-            /*<?php
-              $conn = mysqli_init();
-              mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Databaseeiei123', 'ITFlab', 3306);
-              if (mysqli_connect_errno($conn)) {
-                die('Failed to connect to MySQL: ' . mysqli_connect_error());
-              }
-
-              $sql = 'SELECT * FROM guestbook WHERE ID = ';
-
-              $query = mysqli_query($conn, $sql);
-              ?>*/
             <label>Name</label>
             <input type="text" value="<?php echo $data['Name']; ?>" name="name" id="idName" class="form-control mb-2" placeholder="Enter name">
             <label>Comment</label>
