@@ -24,13 +24,14 @@
     })
   })
 
-  function Delete(id) {
-    document.getElementById('row' + id).remove();
-  }
+  $(".openmodaleiei").click(function() {
+    $('#ID').val($(this).data('id'));
+    $('#deleteaccept').modal('show');
+  });
 </script>
 
 <body>
-  <div class="modal fade" id="deleteaccept" tabindex="-1" role="dialog" aria-labelledby="deleteacceptLabel" aria-hidden="true">
+  <div class="modal fade openmodaleiei" id="deleteaccept" tabindex="-1" role="dialog" aria-labelledby="deleteacceptLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -44,11 +45,11 @@
             <p align="center">Delete this row?</p>
           </center>
           <form action="delete.php" method="post" id="DeleteForm">
-            <input type="hidden" name="ID" value="0">
+            <input type="hidden" name="ID" id="valID" value="document.getElementById("").value">
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-modal-action="yes" onclick="Delete()">Delete</button>
+          <button type="button" class="btn btn-danger" data-modal-action="yes" form="DeleteForm">Delete</button>
         </div>
       </div>
     </div>
