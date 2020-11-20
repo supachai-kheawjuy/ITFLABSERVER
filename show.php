@@ -5,7 +5,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <script src="./app.js"></script>
   <style>
     .card {
       margin-top: 2rem;
@@ -19,6 +18,12 @@
 </head>
 
 <script>
+  $(document).ready(function () {
+    $('#addrow').on('hidden.bs.modal', function () {
+      $(this).find('form').trigger('reset');
+    })
+  })
+
   function Delete(id) {
     document.getElementById('row' + id).remove();
   }
@@ -55,13 +60,13 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="./insert.php" method="post" id="CommentForm">
+          <form action="insert.php" method="post" id="CommentForm">
             <label>Name</label>
-            <input type="text" name="name" id="idName" class="form-control mb-1" placeholder="Enter name">
+            <input type="text" name="name" id="idName" class="form-control mb-2" placeholder="Enter name">
             <label>Comment</label>
-            <input type="text" name="comment" id="idComment" class="form-control mb-1" placeholder="Enter comment">
+            <input type="text" name="comment" id="idComment" class="form-control mb-2" placeholder="Enter comment">
             <label>Link</label>
-            <input type="text" name="link" id="idLink" class="form-control mb-1" placeholder="Enter link">
+            <input type="text" name="link" id="idLink" class="form-control mb-2" placeholder="Enter link">
             <input type="submit" value="Comment" class="btn btn-success mt-2" data-dismiss="modal"></input>
           </form>
         </div>
