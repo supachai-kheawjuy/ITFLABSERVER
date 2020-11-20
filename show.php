@@ -45,7 +45,7 @@
             <p align="center">Delete this row?</p>
           </center>
           <form action="delete.php" method="post" id="DeleteForm">
-            <input type="hidden" name="ID" id="valID" value="document.getElementById("").value">
+            <input type="hidden" name="ID" id="valID" value="" />
           </form>
         </div>
         <div class="modal-footer">
