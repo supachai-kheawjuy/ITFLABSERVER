@@ -116,7 +116,7 @@
             $query = mysqli_query($conn, $sql);
 
             if (!$query) {
-              header('Location: show.php');
+              echo "not work";
             } else {
               $data = mysqli_fetch_assoc($query);
             }
