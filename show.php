@@ -18,8 +18,8 @@
 </head>
 
 <script>
-  $(document).ready(function () {
-    $('#addrow').on('hidden.bs.modal', function () {
+  $(document).ready(function() {
+    $('#addrow').on('hidden.bs.modal', function() {
       $(this).find('form').trigger('reset');
     })
   })
@@ -66,7 +66,15 @@
             <label>Comment</label>
             <input type="text" name="comment" id="idComment" class="form-control mb-2" placeholder="Enter comment">
             <label>Link</label>
-            <input type="text" name="link" id="idLink" class="form-control mb-2" placeholder="Enter link">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">www.</span>
+              </div>
+              <input type="text" name="link" id="idLink" class="form-control mb-2" placeholder="Enter link">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">.com</span>
+              </div>
+            </div>
             <input type="submit" value="Comment" class="btn btn-success mt-2" data-modal-action="yes"></input>
           </form>
         </div>
