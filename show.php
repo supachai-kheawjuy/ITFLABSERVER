@@ -24,7 +24,7 @@
     })
 
     $(".openmodaleiei").click(function() {
-      $('#ID').val($(this).data('id'));
+      $('#valID').value($(this).data('id'));
       $('#deleteaccept').modal('show');
     });
   })
@@ -35,7 +35,7 @@
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="deleteacceptLabel" onclick="Delete()">Delete</h5>
+          <h5 class="modal-title" id="deleteacceptLabel">Delete</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -45,11 +45,11 @@
             <p align="center">Delete this row?</p>
           </center>
           <form action="delete.php" method="post" id="DeleteForm">
-            <input type="hidden" name="ID" id="valID" value="" />
+            <input type="hidden" name="ID" id="valID" value="1">
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-modal-action="yes" form="DeleteForm">Delete</button>
+          <button type="submit" class="btn btn-danger" data-modal-action="yes" form="DeleteForm">Delete</button>
         </div>
       </div>
     </div>
