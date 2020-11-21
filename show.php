@@ -27,27 +27,24 @@
 
 <script>
   $(document).ready(function() {
-    $('#addrow').on('hidden.bs.modal', function() {
-      $(this).find('form').trigger('reset');
-    })
+        $('#addrow').on('hidden.bs.modal', function() {
+          $(this).find('form').trigger('reset');
+        })
 
-    $('#editdata').on('hidden.bs.modal', function() {
-      $(this).find('form').trigger('reset');
-    })
+        $('#editdata').on('hidden.bs.modal', function() {
+          $(this).find('form').trigger('reset');
+        })
 
-    $('.deleteeiei').click(function() {
-      $('#valID').val($(this).data('value'));
-      $('#deleteaccept').modal('show');
-    });
+        $('.deleteeiei').click(function() {
+          $('#valID').val($(this).data('value'));
+          $('#deleteaccept').modal('show');
+        });
 
-    $('.editeiei').click(function() {
-      $.post('show.php', {
-        idddd: $(this).data('value')
-      }, function(idddd) {
-        alert(idddd);
-      });
-    });
-  })
+        $('.editeiei').click(function() {
+          $.post('show.php', {
+            idddd: $(this).data('value')
+          });
+        })
 </script>
 
 <body>
@@ -117,6 +114,18 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+        <?php
+        $idhaha = $_POST['idddd'];
+
+        $haha = mysqli_query($conn, 'SELECT * FROM guestbook WHERE ID = $idhaha');
+
+        $queryeiei = mysqli_query($conn, $haha);
+        if ($queryeiei) {
+          $dataeiei = mysqli_fetch_assoc($queryeiei);
+        } else {
+          $dataeiei = "not found";
+        }
+        ?>
         <div class="modal-body">
           <label>Name</label>
           <input type="text" value="<?php echo $dataeiei['Name']; ?>" name="name" id="ideditName" class="form-control mb-2" placeholder="Enter name">
