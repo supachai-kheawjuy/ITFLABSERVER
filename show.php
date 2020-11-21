@@ -44,7 +44,7 @@
       var val = $(this).data('value');
 
       $.ajax({
-        url: show.php,
+        url: link,
         type: "POST",
         data: {
           ideiei: val
