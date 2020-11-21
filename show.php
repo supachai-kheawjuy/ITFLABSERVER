@@ -32,12 +32,6 @@
       $('#deleteaccept').modal('show');
     });
   })
-
-  $(".editeiei").click(function() {
-    $.post("show.php", {
-      iddd: $(this).data('value')
-    });
-  });
 </script>
 
 <body>
