@@ -177,7 +177,7 @@
               <?php echo $Result['Link']; ?>
             </td>
             <td class="align-middle" width="40">
-              <button type="button" class="btn btn-primary btn-block" href="delete.php?ID=<?php echo $Result['ID']; ?>" id="edit<?php echo $Result['ID']; ?>">Edit</button>
+              <button type="button" class="btn btn-primary btn-block" href="update.php?ID=<?php echo $Result['ID']; ?>" id="edit<?php echo $Result['ID']; ?>">Edit</button>
             </td>
             <td class="align-middle" width="40">
               <button type="button" class="btn btn-danger btn-block deleteeiei" data-toggle="modal" data-target="#deleteaccept" data-value="<?php echo $Result['ID']; ?>" id="del<?php echo $Result['ID']; ?>">Delete</button>
