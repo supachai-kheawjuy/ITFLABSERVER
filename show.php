@@ -39,10 +39,10 @@
       $('#valID').val($(this).data('value'));
       $('#deleteaccept').modal('show');
     });
-  })
 
-  $(".editeiei").click(function() {
-    console.log($(this).data('value'));
+    $(".editeiei").click(function() {
+      console.log($(this).data('value'));
+    })
   })
 </script>
 
