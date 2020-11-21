@@ -43,7 +43,7 @@
     $(".editeiei").click(function() {
       $.post("show.php", {
         dataid: $(this).data('value')
-      })
+      });
       $idhaha = dataid;
 
       $haha = mysqli_query($conn, 'SELECT * FROM guestbook WHERE ID = $idhaha');
