@@ -5,7 +5,7 @@ mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itfl
 if (mysqli_connect_errno($conn)) {
     die('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
-$id = $_GET['ID'];
+$id = $_POST['id'];
 
 $sql = 'SELECT * FROM guestbook WHERE ID = "$id"';
 $query = mysqli_query($conn, $sql);
