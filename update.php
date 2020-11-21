@@ -6,14 +6,15 @@ if (mysqli_connect_errno($conn)) {
     die('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 $id = $_POST['iddddd'];
+print($id);
 
 $sql = 'SELECT * FROM guestbook WHERE ID = "$id"';
+print($sql);
 $query = mysqli_query($conn, $sql);
 if (!$query) {
     header('Location: show.php');
 } else {
     $data = mysqli_fetch_assoc($query);
-    print("it works");
     print($data);
 }
 ?>
