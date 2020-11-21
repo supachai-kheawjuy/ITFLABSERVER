@@ -96,7 +96,7 @@
       </div>
     </div>
   </div>
-  <div class="modal fade" id="editdata" tabindex="-1" role="dialog" aria-labelledby="editdataLabel" aria-hidden="true">
+  <!--<div class="modal fade" id="editdata" tabindex="-1" role="dialog" aria-labelledby="editdataLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -105,25 +105,13 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <?php
-        $idhaha = 7;
-
-        $haha = mysqli_query($conn, 'SELECT * FROM guestbook WHERE ID = $idhaha');
-
-        $queryeiei = mysqli_query($conn, $haha);
-        if ($queryeiei) {
-          $dataeiei = mysqli_fetch_assoc($queryeiei);
-        } else {
-          $dataeiei = "not found";
-        }
-        ?>
         <div class="modal-body aha">
           <label>Name</label>
-          <input type="text" value="<?php echo $dataeiei['Name']; ?>" name="name" id="ideditName" class="form-control mb-2" placeholder="Enter name">
+          <input type="text" value="" name="name" id="ideditName" class="form-control mb-2" placeholder="Enter name">
           <label>Comment</label>
-          <input type="text" value="<?php echo $dataeiei['Comment']; ?>" name="comment" id="ideditComment" class="form-control mb-2" placeholder="Enter comment">
+          <input type="text" value="" name="comment" id="ideditComment" class="form-control mb-2" placeholder="Enter comment">
           <label>Link</label>
-          <input type="text" value="<?php echo $dataeiei['Link']; ?>" name="link" id="ideditLink" class="form-control" placeholder="Enter link">
+          <input type="text" value="" name="link" id="ideditLink" class="form-control" placeholder="Enter link">
           </form>
         </div>
         <div class="modal-footer">
@@ -131,7 +119,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
   <div class="card">
     <nav class="navbar navbar-light justify-content-between">
       <h3>ITFLab: Database</h3>

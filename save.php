@@ -26,15 +26,14 @@ $sql = "UPDATE guestbook SET Name = '$name', Comment = '$comment', Link = '$link
     if (mysqli_query($conn, $sql)) {
         echo 'Saved'
     ?>
-        <div class="card">
-            <script>
-                window.location.replace("show.php");
-            </script>
-        <?php
+        <script>
+            window.location.replace("show.php");
+        </script>
+    <?php
     } else {
         echo "Fail to load";
     }
-        ?>
+    ?>
 </body>
 
 </html>
