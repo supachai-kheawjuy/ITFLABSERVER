@@ -104,7 +104,6 @@
         <?php
         if (isset($_POST['iddd'])) {
           $data = $_POST['iddd'];
-          echo ($data)
         };
         ?>
         <div class="modal-body">
