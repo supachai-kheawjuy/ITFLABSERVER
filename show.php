@@ -41,10 +41,10 @@
     });
 
     $(".editeiei").click(function() {
-      $.post("show.php", {
-        dataid: $(this).data('value')
+      $.post("show.php", $(this).data('value'), function(data) {
+        console.log(data);
+        $idhaha = data;
       });
-      $idhaha = dataid;
 
       $haha = mysqli_query($conn, 'SELECT * FROM guestbook WHERE ID = $idhaha');
 
