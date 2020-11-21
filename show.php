@@ -43,8 +43,8 @@
     $('.editeiei').click(function() {
       $.post('show.php', {
         idddd: $(this).data('value')
-      }, function(res) {
-        alert(res);
+      }, function(idddd) {
+        alert(idddd);
       });
     });
   })
