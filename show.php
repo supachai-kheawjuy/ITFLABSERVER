@@ -165,10 +165,10 @@
               <?php echo $Result['Link']; ?>
             </td>
             <td class="align-middle" width="40">
-              <form action="update.php" method="post" id="updateeiei">
-                <input type="hidden" name="id" id="valID" value="<?php echo $Result['ID']; ?>">
+              <form action="update.php" method="post" id="updateForm">
+                <input type="hidden" name="iddddd" id="valID" value="<?php echo $Result['ID']; ?>">
               </form>
-              <button type="submit" form="updateeiei" class="btn btn-primary btn-block" id="edit<?php echo $Result['ID']; ?>">Edit</button>
+              <button type="submit" form="updateForm" class="btn btn-primary btn-block" id="edit<?php echo $Result['ID']; ?>">Edit</button>
             </td>
             <td class="align-middle" width="40">
               <button type="button" class="btn btn-danger btn-block deleteeiei" data-toggle="modal" data-target="#deleteaccept" data-value="<?php echo $Result['ID']; ?>" id="del<?php echo $Result['ID']; ?>">Delete</button>

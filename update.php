@@ -5,7 +5,7 @@ mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itfl
 if (mysqli_connect_errno($conn)) {
     die('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
-$id = $_POST['id'];
+$id = $_POST['iddddd'];
 
 $sql = 'SELECT * FROM guestbook WHERE ID = "$id"';
 $query = mysqli_query($conn, $sql);
@@ -48,7 +48,8 @@ if (!$query) {
             <input type="text" name="comment" id="idComment" value="<?php echo $data['Comment']; ?>" class="form-control mb-2" placeholder="Enter comment">
             <label>Link</label>
             <input type="text" name="link" id="idLink" class="form-control" value="<?php echo $data['Link']; ?>" placeholder="Enter link">
-            <input type="submit" class="btn btn-success btn-lg mt-3" id="saveBtn" value="Save"></input>
+            <input type="submit" class="btn btn-success btn-lg mt-3 mr-3" id="saveBtn" value="Save"></input>
+            <button type="button" class="btn btn-secondary btn-lg mt-3" id="cancelBtn" onclick="window.location.replace('show.php');">Cancel</button>
         </form>
     </div>
 </body>
