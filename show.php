@@ -15,6 +15,14 @@
       box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
     }
   </style>
+  <?php
+  $conn = mysqli_init();
+  mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Databaseeiei123', 'ITFlab', 3306);
+
+  if (mysqli_connect_errno($conn)) {
+    die('Failed to connect to MySQL: ' . mysqli_connect_error());
+  }
+  ?>
 </head>
 
 <script>
@@ -31,6 +39,10 @@
       $('#valID').val($(this).data('value'));
       $('#deleteaccept').modal('show');
     });
+  })
+
+  $(".editeiei").click(function() {
+    console.log($(this).data('value'));
   })
 </script>
 
@@ -101,11 +113,6 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <?php
-        if (isset($_POST['iddd'])) {
-          $data = $_POST['iddd'];
-        };
-        ?>
         <div class="modal-body">
           <label>Name</label>
           <input type="text" value="<?php echo $data['Name']; ?>" name="name" id="idName" class="form-control mb-2" placeholder="Enter name">
@@ -130,14 +137,6 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>-->
     </nav>
-    <?php
-    $conn = mysqli_init();
-    mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Databaseeiei123', 'ITFlab', 3306);
-    if (mysqli_connect_errno($conn)) {
-      die('Failed to connect to MySQL: ' . mysqli_connect_error());
-    }
-    $res = mysqli_query($conn, 'SELECT * FROM guestbook');
-    ?>
     <table class="table table-hover mb-3" width="680" border="1" id="data">
       <thead class="thead-dark">
         <tr>
@@ -160,6 +159,7 @@
       </thead>
       <tbody>
         <?php
+        $res = mysqli_query($conn, 'SELECT * FROM guestbook');
         while ($Result = mysqli_fetch_array($res)) {
         ?>
           <tr id="row<?php echo $Result['ID']; ?>">
@@ -173,9 +173,6 @@
               <?php echo $Result['Link']; ?>
             </td>
             <td class="align-middle" width="40">
-              <form id="hideeiei" method="post">
-                <input type="hidden" name="iddd" id="valIddd" value="<?php echo $Result['ID']; ?>">
-              </form>
               <button type="submit" form="hideeiei" class="btn btn-primary btn-block editeiei" data-toggle="modal" data-target="#editdata" data-value="<?php echo $Result['ID']; ?>" id="edit<?php echo $Result['ID']; ?>">Edit</button>
             </td>
             <td class="align-middle" width="40">
