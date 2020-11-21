@@ -45,323 +45,164 @@
         idddd: $(this).data('value')
       });
     })
-  }); <
-  /script
+  });
+</script>
 
-  <
-  body >
-    <
-    div class = "modal fade"
-  id = "deleteaccept"
-  tabindex = "-1"
-  role = "dialog"
-  aria - labelledby = "deleteacceptLabel"
-  aria - hidden = "true" >
-    <
-    div class = "modal-dialog modal-sm"
-  role = "document" >
-    <
-    div class = "modal-content" >
-    <
-    div class = "modal-header" >
-    <
-    h5 class = "modal-title"
-  id = "deleteacceptLabel" > Delete < /h5> <
-    button type = "button"
-  class = "close"
-  data - dismiss = "modal"
-  aria - label = "Close" >
-    <
-    span aria - hidden = "true" > & times; < /span> <
-  /button> <
-  /div> <
-  div class = "modal-body" >
-    <
-    center >
-    <
-    p align = "center" > Delete this row ? < /p> <
-    /center> <
-    form action = "delete.php"
-  method = "post"
-  id = "DeleteForm" >
-    <
-    input type = "hidden"
-  name = "ID"
-  id = "valID"
-  value = "" >
-    <
-    /form> <
-    /div> <
-    div class = "modal-footer" >
-    <
-    button type = "submit"
-  class = "btn btn-danger"
-  data - modal - action = "yes"
-  form = "DeleteForm" > Delete < /button> <
-    /div> <
-    /div> <
-    /div> <
-    /div> <
-    div class = "modal fade"
-  id = "addrow"
-  tabindex = "-1"
-  role = "dialog"
-  aria - labelledby = "addrowLabel"
-  aria - hidden = "true" >
-    <
-    div class = "modal-dialog"
-  role = "document" >
-    <
-    div class = "modal-content" >
-    <
-    div class = "modal-header" >
-    <
-    h5 class = "modal-title"
-  id = "addrowLabel" > Comment < /h5> <
-    button type = "button"
-  class = "close"
-  data - dismiss = "modal"
-  aria - label = "Close" >
-    <
-    span aria - hidden = "true" > & times; < /span> <
-  /button> <
-  /div> <
-  div class = "modal-body" >
-    <
-    form action = "insert.php"
-  method = "post"
-  id = "CommentForm" >
-    <
-    label > Name < /label> <
-    input type = "text"
-  name = "name"
-  id = "idName"
-  class = "form-control mb-2"
-  placeholder = "Enter name" >
-    <
-    label > Comment < /label> <
-    input type = "text"
-  name = "comment"
-  id = "idComment"
-  class = "form-control mb-2"
-  placeholder = "Enter comment" >
-    <
-    label > Link < /label> <
-    div class = "input-group mb-2" >
-    <
-    div class = "input-group-prepend" >
-    <
-    span class = "input-group-text"
-  id = "basic-addon1" > www. < /span> <
-    /div> <
-    input type = "text"
-  name = "link"
-  id = "idLink"
-  class = "form-control"
-  placeholder = "Enter link" >
-    <
-    !--
-    <
-    div class = "input-group-append" >
-    <
-    span class = "input-group-text"
-  id = "basic-addon1" > .com < /span> <
-    /div>--> <
-    /div> <
-    /form> <
-    /div> <
-    div class = "modal-footer" >
-    <
-    button type = "submit"
-  form = "CommentForm"
-  class = "btn btn-success"
-  id = "commentBtn"
-  data - modal - action = "yes" > Comment < /button> <
-    /div> <
-    /div> <
-    /div> <
-    /div> <
-    div class = "modal fade"
-  id = "editdata"
-  tabindex = "-1"
-  role = "dialog"
-  aria - labelledby = "editdataLabel"
-  aria - hidden = "true" >
-    <
-    div class = "modal-dialog"
-  role = "document" >
-    <
-    div class = "modal-content" >
-    <
-    div class = "modal-header" >
-    <
-    h5 class = "modal-title"
-  id = "editdataLabel" > Edit < /h5> <
-    button type = "button"
-  class = "close"
-  data - dismiss = "modal"
-  aria - label = "Close" >
-    <
-    span aria - hidden = "true" > & times; < /span> <
-  /button> <
-  /div>
-  <?php
-  $idhaha = 7;
+<body>
+  <div class="modal fade" id="deleteaccept" tabindex="-1" role="dialog" aria-labelledby="deleteacceptLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteacceptLabel">Delete</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <center>
+            <p align="center">Delete this row?</p>
+          </center>
+          <form action="delete.php" method="post" id="DeleteForm">
+            <input type="hidden" name="ID" id="valID" value="">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger" data-modal-action="yes" form="DeleteForm">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="addrow" tabindex="-1" role="dialog" aria-labelledby="addrowLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addrowLabel">Comment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="insert.php" method="post" id="CommentForm">
+            <label>Name</label>
+            <input type="text" name="name" id="idName" class="form-control mb-2" placeholder="Enter name">
+            <label>Comment</label>
+            <input type="text" name="comment" id="idComment" class="form-control mb-2" placeholder="Enter comment">
+            <label>Link</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">www.</span>
+              </div>
+              <input type="text" name="link" id="idLink" class="form-control" placeholder="Enter link">
+              <!--
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon1">.com</span>
+              </div>-->
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" form="CommentForm" class="btn btn-success" id="commentBtn" data-modal-action="yes">Comment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="editdata" tabindex="-1" role="dialog" aria-labelledby="editdataLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editdataLabel">Edit</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <?php
+        $idhaha = 7;
 
-  $haha = mysqli_query($conn, 'SELECT * FROM guestbook WHERE ID = $idhaha');
+        $haha = mysqli_query($conn, 'SELECT * FROM guestbook WHERE ID = $idhaha');
 
-  $queryeiei = mysqli_query($conn, $haha);
-  if ($queryeiei) {
-  } else {
-    $dataeiei = "not found";
-  }
-  ?>
-    <
-    div class = "modal-body aha" >
-    <
-    label > Name < /label> <
-    input type = "text"
-  value = "<?php echo $dataeiei['Name']; ?>"
-  name = "name"
-  id = "ideditName"
-  class = "form-control mb-2"
-  placeholder = "Enter name" >
-    <
-    label > Comment < /label> <
-    input type = "text"
-  value = "<?php echo $dataeiei['Comment']; ?>"
-  name = "comment"
-  id = "ideditComment"
-  class = "form-control mb-2"
-  placeholder = "Enter comment" >
-    <
-    label > Link < /label> <
-    input type = "text"
-  value = "<?php echo $dataeiei['Link']; ?>"
-  name = "link"
-  id = "ideditLink"
-  class = "form-control"
-  placeholder = "Enter link" >
-    <
-    /form> <
-    /div> <
-    div class = "modal-footer" >
-    <
-    button type = "submit"
-  form = "EditForm"
-  class = "btn btn-success"
-  id = "editBtn"
-  data - modal - action = "yes" > Save < /button> <
-    /div> <
-    /div> <
-    /div> <
-    /div> <
-    div class = "card" >
-    <
-    nav class = "navbar navbar-light justify-content-between" >
-    <
-    h3 > ITFLab: Database < /h3> <
-    !--
-    <
-    form class = "form-inline" >
-    <
-    input class = "form-control mr-sm-2"
-  type = "search"
-  placeholder = "Search"
-  aria - label = "Search" >
-    <
-    button class = "btn btn-outline-success my-2 my-sm-0"
-  type = "submit" > Search < /button> <
-    /form>--> <
-    /nav> <
-    table class = "table table-hover mb-3"
-  width = "680"
-  border = "1"
-  id = "data" >
-    <
-    thead class = "thead-dark" >
-    <
-    tr >
-    <
-    th width = "100" >
-    <
-    div align = "center" > Name < /div> <
-    /th> <
-    th width = "350" >
-    <
-    div align = "center" > Comment < /div> <
-    /th> <
-    th width = "150" >
-    <
-    div align = "center" > Link < /div> <
-    /th> <
-    th width = "40" >
-    <
-    div align = "center" > Edit < /div> <
-    /th> <
-    th width = "40" >
-    <
-    div align = "center" > Delete < /div> <
-    /th> <
-    /tr> <
-    /thead> <
-    tbody >
-    <?php
-    $res = mysqli_query($conn, 'SELECT * FROM guestbook');
-    while ($Result = mysqli_fetch_array($res)) {
-    ?> <
-      tr id = "row<?php echo $Result['ID']; ?>" >
-      <
-      td class = "align-middle"
-  width = "100" >
-    <?php echo $Result['Name']; ?> <
-    /td> <
-    td class = "align-middle"
-  width = "350" >
-    <?php echo $Result['Comment']; ?> <
-    /td> <
-    td class = "align-middle"
-  width = "150" >
-    <?php echo $Result['Link']; ?> <
-    /td> <
-    td class = "align-middle"
-  width = "40" >
-    <
-    button type = "button"
-  class = "btn btn-primary btn-block editeiei"
-  data - toggle = "modal"
-  data - target = "#editdata"
-  data - value = "<?php echo $Result['ID']; ?>"
-  id = "edit<?php echo $Result['ID']; ?>" > Edit < /button> <
-    /td> <
-    td class = "align-middle"
-  width = "40" >
-    <
-    button type = "button"
-  class = "btn btn-danger btn-block deleteeiei"
-  data - toggle = "modal"
-  data - target = "#deleteaccept"
-  data - value = "<?php echo $Result['ID']; ?>"
-  id = "del<?php echo $Result['ID']; ?>" > Delete < /button> <
-    /td> <
-    /tr>
-  <?php
-    }
-  ?>
-    <
-    /tbody> <
-    /table>
-  <?php mysqli_close($conn); ?>
-    <
-    div >
-    <
-    button type = "button"
-  class = "btn btn-success"
-  data - toggle = "modal"
-  data - target = "#addrow" > Comment < /button> <
-    /div> <
-    /div> <
-    /body>
+        $queryeiei = mysqli_query($conn, $haha);
+        if ($queryeiei) {
+          $dataeiei = mysqli_fetch_assoc($queryeiei);
+        } else {
+          $dataeiei = "not found";
+        }
+        ?>
+        <div class="modal-body aha">
+          <label>Name</label>
+          <input type="text" value="<?php echo $dataeiei['Name']; ?>" name="name" id="ideditName" class="form-control mb-2" placeholder="Enter name">
+          <label>Comment</label>
+          <input type="text" value="<?php echo $dataeiei['Comment']; ?>" name="comment" id="ideditComment" class="form-control mb-2" placeholder="Enter comment">
+          <label>Link</label>
+          <input type="text" value="<?php echo $dataeiei['Link']; ?>" name="link" id="ideditLink" class="form-control" placeholder="Enter link">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" form="EditForm" class="btn btn-success" id="editBtn" data-modal-action="yes">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <nav class="navbar navbar-light justify-content-between">
+      <h3>ITFLab: Database</h3>
+      <!--
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>-->
+    </nav>
+    <table class="table table-hover mb-3" width="680" border="1" id="data">
+      <thead class="thead-dark">
+        <tr>
+          <th width="100">
+            <div align="center">Name</div>
+          </th>
+          <th width="350">
+            <div align="center">Comment</div>
+          </th>
+          <th width="150">
+            <div align="center">Link </div>
+          </th>
+          <th width="40">
+            <div align="center">Edit</div>
+          </th>
+          <th width="40">
+            <div align="center">Delete</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        $res = mysqli_query($conn, 'SELECT * FROM guestbook');
+        while ($Result = mysqli_fetch_array($res)) {
+        ?>
+          <tr id="row<?php echo $Result['ID']; ?>">
+            <td class="align-middle" width="100">
+              <?php echo $Result['Name']; ?>
+            </td>
+            <td class="align-middle" width="350">
+              <?php echo $Result['Comment']; ?>
+            </td>
+            <td class="align-middle" width="150">
+              <?php echo $Result['Link']; ?>
+            </td>
+            <td class="align-middle" width="40">
+              <button type="button" class="btn btn-primary btn-block editeiei" data-toggle="modal" data-target="#editdata" data-value="<?php echo $Result['ID']; ?>" id="edit<?php echo $Result['ID']; ?>">Edit</button>
+            </td>
+            <td class="align-middle" width="40">
+              <button type="button" class="btn btn-danger btn-block deleteeiei" data-toggle="modal" data-target="#deleteaccept" data-value="<?php echo $Result['ID']; ?>" id="del<?php echo $Result['ID']; ?>">Delete</button>
+            </td>
+          </tr>
+        <?php
+        }
+        ?>
+      </tbody>
+    </table>
+    <?php mysqli_close($conn); ?>
+    <div>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addrow">Comment</button>
+    </div>
+  </body>
+  </div>
 
-    <
-    /html>
+</html>
