@@ -8,7 +8,7 @@ if (mysqli_connect_errno($conn)) {
 $id = $_POST['iddddd'];
 print($id);
 
-$sql = 'SELECT * FROM guestbook WHERE ID = "$id"';
+$sql = "SELECT * FROM guestbook WHERE ID = '$id'";
 print($sql);
 $query = mysqli_query($conn, $sql);
 if (!$query) {
