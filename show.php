@@ -41,8 +41,9 @@
     });
 
     $('.editeiei').click(function() {
-      var val = $(this).data('value');
-      $.post(MyAjax.ajaxurl, val, function(res) {
+      $.post('show.php', {
+        idddd: $(this).data('value')
+      }, function(res) {
         console.log(res);
       });
     });
