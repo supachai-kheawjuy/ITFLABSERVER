@@ -40,11 +40,21 @@
       $('#deleteaccept').modal('show');
     });
 
-    /*$('.editeiei').click(function() {
-      $.post('show.php', $(this).data('value'), function(data) {
-        console.log(data);
+    $('.editeiei').click(function() {
+      var val = $(this).data('value');
+
+      $.ajax({
+        url: show.php,
+        type: "POST",
+        data: {
+          ideiei: val
+        }
       });
-    });*/
+      console.log(val);
+      /*$.post('show.php', $(this).data('value'), function(data) {
+        console.log(data);
+      });*/
+    });
   })
 </script>
 
