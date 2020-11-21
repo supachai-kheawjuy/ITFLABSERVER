@@ -44,7 +44,7 @@
       $.post('show.php', {
         idddd: $(this).data('value')
       }, function(res) {
-        console.log(res);
+        alert(res);
       });
     });
   })
