@@ -7,7 +7,7 @@ if (mysqli_connect_errno($conn)) {
 }
 $id = $_GET['ID'];
 
-$sql = 'SELECT * FROM guestbook WHERE ID = $id';
+$sql = 'SELECT * FROM guestbook WHERE ID = "$id"';
 $query = mysqli_query($conn, $sql);
 if (!$query) {
     header('Location: show.php');
@@ -43,7 +43,7 @@ if (!$query) {
         <form action="update.php" method="post">
             <input type="hidden" name="id" id="valID" value="<?php echo $data['ID']; ?>">
             <label>Name</label>
-            <input type="text" name="name" id="idName" value="<?php echo $data['Name']; ?>"> class="form-control mb-2" placeholder="Enter name">
+            <input type="text" name="name" id="idName" value="<?php echo $data['Name']; ?>" class="form-control mb-2" placeholder="Enter name">
             <label>Comment</label>
             <input type="text" name="comment" id="idComment" value="<?php echo $data['Comment']; ?>" class="form-control mb-2" placeholder="Enter comment">
             <label>Link</label>
