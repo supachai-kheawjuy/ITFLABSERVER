@@ -116,7 +116,7 @@
           </button>
         </div>
         <?php
-        $idhaha = $_POST['idddd'];
+        $idhaha = 7;
 
         $haha = mysqli_query($conn, 'SELECT * FROM guestbook WHERE ID = $idhaha');
 
