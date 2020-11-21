@@ -40,7 +40,7 @@ if (!$query) {
         <nav class="navbar navbar-light justify-content-between">
             <h3>ITFLab: Database</h3>
         </nav>
-        <form action="update.php" method="post">
+        <form action="save.php" method="post">
             <input type="hidden" name="id" id="valID" value="<?php echo $data['ID']; ?>">
             <label>Name</label>
             <input type="text" name="name" id="idName" value="<?php echo $data['Name']; ?>" class="form-control mb-2" placeholder="Enter name">
@@ -48,6 +48,7 @@ if (!$query) {
             <input type="text" name="comment" id="idComment" value="<?php echo $data['Comment']; ?>" class="form-control mb-2" placeholder="Enter comment">
             <label>Link</label>
             <input type="text" name="link" id="idLink" class="form-control" value="<?php echo $data['Link']; ?>" placeholder="Enter link">
+            <input type="submit" class="btn btn-success mt-3" id="saveBtn" value="Save"></input>
         </form>
     </div>
 </body>
