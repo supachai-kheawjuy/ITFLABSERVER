@@ -42,18 +42,9 @@
 
     $('.editeiei').click(function() {
       var val = $(this).data('value');
-
-      $.ajax({
-        url: link,
-        type: "POST",
-        data: {
-          ideiei: val
-        }
-      });
-      console.log(val);
-      /*$.post('show.php', $(this).data('value'), function(data) {
+      $.post('show.php', val, function(data) {
         console.log(data);
-      });*/
+      });
     });
   })
 </script>
