@@ -32,6 +32,12 @@
       $('#deleteaccept').modal('show');
     });
   })
+
+  $(".editeiei").click(function() {
+    $.post("show.php", {
+      iddd: $(this).data('value')
+    });
+  });
 </script>
 
 <body>
@@ -101,39 +107,20 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <?php
-          if (isset($_POST['iddd'])) {
-          ?>
-            <script>
-              console.log("hello")
-            </script>
-          <?php
-            $conn = mysqli_init();
-            mysqli_real_connect($conn, 'itflabserver.mysql.database.azure.com', 'itflab@itflabserver', 'Databaseeiei123', 'ITFlab', 3306);
-            if (mysqli_connect_errno($conn)) {
-              die('Failed to connect to MySQL: ' . mysqli_connect_error());
-            }
-
-            $sql = "SELECT * FROM guestbook WHERE ID = $[this]";
-
-            $query = mysqli_query($conn, $sql);
-
-            $dataeiei = mysqli_fetch_assoc($query);
-          } ?> <form action="update.php" method="post" id="EditForm">
-            <?php
-            while ($Result = mysqli_fetch_array($dataeiei)) {
-            ?>
-              <label>Name</label>
-              <input type="text" value="<?php echo $data['Name']; ?>" name="name" id="idName" class="form-control mb-2" placeholder="Enter name">
-              <label>Comment</label>
-              <input type="text" value="<?php echo $data['Comment']; ?>" name="comment" id="idComment" class="form-control mb-2" placeholder="Enter comment">
-              <label>Link</label>
-              <input type="text" value="<?php echo $data['Link']; ?>" name="link" id="idLink" class="form-control" placeholder="Enter link">
-          </form>
         <?php
-            }
-            mysqli_close($conn); ?>
+        if (isset($_POST['iddd'])) {
+          $data = $_POST['iddd'];
+          echo ($data)
+        };
+        ?>
+        <div class="modal-body">
+          <label>Name</label>
+          <input type="text" value="<?php echo $data['Name']; ?>" name="name" id="idName" class="form-control mb-2" placeholder="Enter name">
+          <label>Comment</label>
+          <input type="text" value="<?php echo $data['Comment']; ?>" name="comment" id="idComment" class="form-control mb-2" placeholder="Enter comment">
+          <label>Link</label>
+          <input type="text" value="<?php echo $data['Link']; ?>" name="link" id="idLink" class="form-control" placeholder="Enter link">
+          </form>
         </div>
         <div class="modal-footer">
           <button type="submit" form="EditForm" class="btn btn-success" id="editBtn" data-modal-action="yes">Save</button>
@@ -196,10 +183,10 @@
               <form id="hideeiei" method="post">
                 <input type="hidden" name="iddd" id="valIddd" value="<?php echo $Result['ID']; ?>">
               </form>
-              <button type="submit" form="hideeiei" class="btn btn-primary btn-block editeiei" data-toggle="modal" data-target="#editdata" data-value="<?php echo $Result['ID']; ?>" id="<?php echo $Result['ID']; ?>">Edit</button>
+              <button type="submit" form="hideeiei" class="btn btn-primary btn-block editeiei" data-toggle="modal" data-target="#editdata" data-value="<?php echo $Result['ID']; ?>" id="edit<?php echo $Result['ID']; ?>">Edit</button>
             </td>
             <td class="align-middle" width="40">
-              <button type="button" class="btn btn-danger btn-block deleteeiei" data-toggle="modal" data-target="#deleteaccept" data-value="<?php echo $Result['ID']; ?>" id="<?php echo $Result['ID']; ?>">Delete</button>
+              <button type="button" class="btn btn-danger btn-block deleteeiei" data-toggle="modal" data-target="#deleteaccept" data-value="<?php echo $Result['ID']; ?>" id="del<?php echo $Result['ID']; ?>">Delete</button>
             </td>
           </tr>
         <?php
