@@ -40,11 +40,11 @@
       $('#deleteaccept').modal('show');
     });
 
-    $('.editeiei').click(function() {
-      $.post('show.php', $(this).data('value').serialize(), function(data) {
+    /*$('.editeiei').click(function() {
+      $.post('show.php', $(this).data('value'), function(data) {
         console.log(data);
       });
-    });
+    });*/
   })
 </script>
 
