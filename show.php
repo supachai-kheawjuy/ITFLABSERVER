@@ -31,20 +31,10 @@
       $(this).find('form').trigger('reset');
     })
 
-    $('#editdata').on('hidden.bs.modal', function() {
-      $(this).find('form').trigger('reset');
-    })
-
     $('.deleteeiei').click(function() {
       $('#valID').val($(this).data('value'));
       $('#deleteaccept').modal('show');
     });
-
-    $('.editeiei').click(function() {
-      $.post('show.php', {
-        idddd: $(this).data('value')
-      });
-    })
   });
 </script>
 
@@ -187,7 +177,7 @@
               <?php echo $Result['Link']; ?>
             </td>
             <td class="align-middle" width="40">
-              <button type="button" class="btn btn-primary btn-block editeiei" data-toggle="modal" data-target="#editdata" data-value="<?php echo $Result['ID']; ?>" id="edit<?php echo $Result['ID']; ?>">Edit</button>
+              <button type="button" class="btn btn-primary btn-block" href="delete.php?ID=<?php echo $Result['ID']; ?>" id="edit<?php echo $Result['ID']; ?>">Edit</button>
             </td>
             <td class="align-middle" width="40">
               <button type="button" class="btn btn-danger btn-block deleteeiei" data-toggle="modal" data-target="#deleteaccept" data-value="<?php echo $Result['ID']; ?>" id="del<?php echo $Result['ID']; ?>">Delete</button>
@@ -202,7 +192,7 @@
     <div>
       <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addrow">Comment</button>
     </div>
-  </body>
-  </div>
+</body>
+</div>
 
 </html>
