@@ -6,7 +6,6 @@ if (mysqli_connect_errno($conn)) {
     die('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 $id = $_POST['iddd'];
-print($id);
 
 $sql = "SELECT * FROM guestbook WHERE ID = '$id'";
 
@@ -15,7 +14,6 @@ if (!$query) {
     header('Location: show.php');
 } else {
     $data = mysqli_fetch_assoc($query);
-    print($data);
 }
 ?>
 <!DOCTYPE html>
