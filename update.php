@@ -13,6 +13,8 @@ if (!$query) {
     header('Location: show.php');
 } else {
     $data = mysqli_fetch_assoc($query);
+    print("it works");
+    print($data);
 }
 ?>
 <!DOCTYPE html>
