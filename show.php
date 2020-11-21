@@ -27,24 +27,25 @@
 
 <script>
   $(document).ready(function() {
-        $('#addrow').on('hidden.bs.modal', function() {
-          $(this).find('form').trigger('reset');
-        })
+    $('#addrow').on('hidden.bs.modal', function() {
+      $(this).find('form').trigger('reset');
+    })
 
-        $('#editdata').on('hidden.bs.modal', function() {
-          $(this).find('form').trigger('reset');
-        })
+    $('#editdata').on('hidden.bs.modal', function() {
+      $(this).find('form').trigger('reset');
+    })
 
-        $('.deleteeiei').click(function() {
-          $('#valID').val($(this).data('value'));
-          $('#deleteaccept').modal('show');
-        });
+    $('.deleteeiei').click(function() {
+      $('#valID').val($(this).data('value'));
+      $('#deleteaccept').modal('show');
+    });
 
-        $('.editeiei').click(function() {
-          $.post('show.php', {
-            idddd: $(this).data('value')
-          });
-        })
+    $('.editeiei').click(function() {
+      $.post('show.php', {
+        idddd: $(this).data('value')
+      });
+    })
+  });
 </script>
 
 <body>
