@@ -42,7 +42,7 @@
 
     $(".editeiei").click(function() {
       $.post("show.php", {
-        dataid = $(this).data('value')
+        dataid: $(this).data('value')
       })
       $idhaha = dataid;
 
