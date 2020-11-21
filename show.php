@@ -113,13 +113,27 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+        <?php
+        if (isset($_POST['OK'])) {
+          $idhaha = $_POST['iddd'];
+        }
+
+        $haha = mysqli_query($conn, 'SELECT * FROM guestbook WHERE ID = $idhaha');
+
+        $queryeiei = mysqli_query($conn, $haha);
+        if ($queryeiei) {
+          $dataeiei = mysqli_fetch_assoc($queryeiei);
+        } else {
+          $dataeiei = "not found";
+        }
+        ?>
         <div class="modal-body">
           <label>Name</label>
-          <input type="text" value="<?php echo $data['Name']; ?>" name="name" id="ideditName" class="form-control mb-2" placeholder="Enter name">
+          <input type="text" value="<?php echo $dataeiei['Name']; ?>" name="name" id="ideditName" class="form-control mb-2" placeholder="Enter name">
           <label>Comment</label>
-          <input type="text" value="<?php echo $data['Comment']; ?>" name="comment" id="ideditComment" class="form-control mb-2" placeholder="Enter comment">
+          <input type="text" value="<?php echo $dataeiei['Comment']; ?>" name="comment" id="ideditComment" class="form-control mb-2" placeholder="Enter comment">
           <label>Link</label>
-          <input type="text" value="<?php echo $data['Link']; ?>" name="link" id="ideditLink" class="form-control" placeholder="Enter link">
+          <input type="text" value="<?php echo $dataeiei['Link']; ?>" name="link" id="ideditLink" class="form-control" placeholder="Enter link">
           </form>
         </div>
         <div class="modal-footer">
@@ -173,7 +187,10 @@
               <?php echo $Result['Link']; ?>
             </td>
             <td class="align-middle" width="40">
-              <button type="button" class="btn btn-primary btn-block editeiei" data-toggle="modal" data-target="#editdata" data-value="<?php echo $Result['ID']; ?>" id="edit<?php echo $Result['ID']; ?>">Edit</button>
+              <form action="" method="post">
+                <input type="hidden" name="iddd" value="<?php echo $Result['ID']; ?>">
+                <button type="submit" name="OK" class="btn btn-primary btn-block editeiei" data-toggle="modal" data-target="#editdata" data-value="<?php echo $Result['ID']; ?>" id="edit<?php echo $Result['ID']; ?>">Edit</button>
+              </form>
             </td>
             <td class="align-middle" width="40">
               <button type="button" class="btn btn-danger btn-block deleteeiei" data-toggle="modal" data-target="#deleteaccept" data-value="<?php echo $Result['ID']; ?>" id="del<?php echo $Result['ID']; ?>">Delete</button>
