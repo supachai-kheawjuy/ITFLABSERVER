@@ -41,7 +41,7 @@
     });
 
     $('.editeiei').click(function() {
-      $.post('show.php', $(this).data('value'), function(data) {
+      $.post('show.php', $(this).data('value').serialize(), function(data) {
         console.log(data);
       });
     });
