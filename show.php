@@ -42,8 +42,8 @@
 
     $('.editeiei').click(function() {
       var val = $(this).data('value');
-      $.post('show.php', val, function(data) {
-        console.log(data);
+      $.post(MyAjax.ajaxurl, val, function(res) {
+        console.log(res);
       });
     });
   })
