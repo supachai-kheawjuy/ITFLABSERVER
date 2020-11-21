@@ -43,18 +43,8 @@
     $(".editeiei").click(function() {
       $.post("show.php", $(this).data('value'), function(data) {
         console.log(data);
-        $idhaha = data;
       });
-
-      $haha = mysqli_query($conn, 'SELECT * FROM guestbook WHERE ID = $idhaha');
-
-      $queryeiei = mysqli_query($conn, $haha);
-      if ($queryeiei) {
-        $dataeiei = mysqli_fetch_assoc($queryeiei);
-      } else {
-        $dataeiei = "not found";
-      }
-    })
+    });
   })
 </script>
 
