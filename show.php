@@ -166,7 +166,7 @@
             </td>
             <td class="align-middle" width="40">
               <form action="update.php" method="post" id="updateeiei">
-                <input type="hidden" name="id" id="valID" value="<?php echo $data['ID']; ?>">
+                <input type="hidden" name="id" id="valID" value="<?php echo $Result['ID']; ?>">
               </form>
               <button type="submit" form="updateeiei" class="btn btn-primary btn-block" id="edit<?php echo $Result['ID']; ?>">Edit</button>
             </td>
